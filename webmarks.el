@@ -38,7 +38,7 @@
 (defun webmarks-list ()
   (interactive)
   (ivy-read
-	 "Web bookmark: "
+	 "Webmarks: "
 	 webmarks--map
 	 :action (lambda (label)
 		         (browse-url (gethash label webmarks--map)))))
