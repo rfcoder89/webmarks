@@ -1,7 +1,15 @@
 (require 'json)
 
-(setq webmarks-file "~/.emacs.d/webmarks.json")
-(setq webmarks--map (make-hash-table :test 'equal))
+(defgroup webmarks nil
+  "Customization group for webmarks."
+  :group 'convenience)
+
+(defcustom webmarks-file "~/.emacs.d/webmarks.json"
+  "File to store/load webmarks."
+  :group 'webmarks)
+  
+(defvar webmarks--map (make-hash-table :test 'equal)
+  "Hash map to store webmarks")
 
 (defun webmarks-reload ()
   (interactive)
